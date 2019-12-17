@@ -1,0 +1,27 @@
+#include <stdio.h>
+#include <math.h>
+#include <cs50.h>
+
+int main()
+{
+    int cents_owed; // The cent owed
+    int coin[] = {25,10,5,1}; // list of coin values
+
+    do
+    {
+        float dollars_owed = get_float("Change owed: ");
+        cents_owed = round(dollars_owed * 100);
+    }
+    while (cents_owed <= 0); 
+
+    int quarters = cents_owed / coin[0];
+    int dimes = (cents_owed % coin[0]) / coin[1];
+    int nickels = ((cents_owed % coin[0]) % coin[1]) / coin[2];
+    int pennies = ((cents_owed % coin[0]) % coin[1]) % coin[2];
+    
+    printf(" quarters %d\n", quarters);
+    printf(" dimes %d\n", dimes);
+    printf(" nickels %d\n", nickels);
+    printf(" pennies %d\n", pennies);
+    printf(" Total %d\n", quarters + dimes + nickels + pennies);
+}
