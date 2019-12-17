@@ -8,7 +8,7 @@ int main(void)
     string space = " ";
     do
     {
-      n = get_int("nhap chieu cao:");
+      n = get_int("height:");
     }
     while (n <1 || n > 8);
         
