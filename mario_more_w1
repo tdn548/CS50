@@ -1,0 +1,33 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int n;
+    string h = "#"; // the left #
+    string space = " ";
+    string h2 = "########"; //the right left
+    do
+    {
+        n = get_int("What is the height:");
+    }
+    while (n < 1 || n > 8);
+        
+    for (int i = 0; i < n; i++) // i is the line line 1 line 2 line 3 so on
+    {
+        for (int a = i + 1; a < n; a++) // a is the number of space
+        {
+            printf("%s", space);
+        }
+        for (int b = i + 1; b > 0; b--) // b is the number of left #
+        {
+            printf("%s", h);
+        } 
+        printf("  ");
+        for (int c = i + 1; c > 0; c--) //c is the number of the right #, c=i in line 1 has 1#; line 2 has 2##
+        {
+            printf("%c", h2[i]); 
+        }
+        printf("\n");
+    }
+}
