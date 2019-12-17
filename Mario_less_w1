@@ -1,0 +1,27 @@
+#include <cs50.h>
+#include <stdio.h>
+
+int main(void)
+{
+    int n;
+    string h = "#";
+    string space = " ";
+    do
+    {
+      n = get_int("nhap chieu cao:");
+    }
+    while (n <1 || n > 8);
+        
+    for (int i =0; i< n; i++)
+    {
+        for (int col = i + 1; col < n; col ++)
+        {
+            printf("%s",space);
+        }
+        for (int row = i + 1; row > 0; row--)
+        {
+            printf("%s",h);
+        } 
+        printf("\n");
+    }
+}
